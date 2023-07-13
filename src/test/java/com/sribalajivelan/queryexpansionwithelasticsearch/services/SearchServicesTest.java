@@ -1,7 +1,6 @@
 package com.sribalajivelan.queryexpansionwithelasticsearch.services;
 
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -16,7 +15,7 @@ public class SearchServicesTest {
 
     @Test
     void testSearchQueryExpansion() {
-        String expansion = searchServices.searchQueryExpansion("are crab cake oreos real");
+        String expansion = searchServices.expansionQuery("are crab cake oreos real");
         assertNotNull(expansion);
         assertTrue(expansion.contains("actual"));
         assertTrue(expansion.contains("cake"));
