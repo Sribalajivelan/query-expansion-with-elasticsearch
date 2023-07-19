@@ -38,6 +38,8 @@ public class SearchServices {
                 query_string.append(" AND ");
             }
         }
+        Set<String> synonyms = getSynonymsForToken(query);
+        LOGGER.info(String.format("Expansion Query for fully query === %s", synonyms));
         LOGGER.info(String.format("Expansion Query === %s", query_string));
         return query_string.toString();
     }
